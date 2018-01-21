@@ -50,23 +50,13 @@ function validate_credentials($connection, $username, $password)
 //===============================================================================
 /* Function to validate if username entered matches the condition or not
 */
-function validate_username($field) {
-if ($field == "") return "No Username was entered<br>";
-else if (strlen($field) < 5) return "Usernames must be at least 5 characters<br>";
-else if (preg_match("/[^a-zA-Z0-9_-]/", $field))
-     return "Only letters, numbers, - and _ in usernames<br>";
-     return "";
+function validate_malwarename($field) {
+return ($field == "") ? "No Forename was entered<br>": "";
 }
 
-function validate_password($field) {
-if ($field == "") return "No Password was entered<br>";
-else if (strlen($field) < 6)
-return "Passwords must be at least 6 characters<br>";
-else if (!preg_match("/[a-z]/", $field) ||
-         !preg_match("/[A-Z]/", $field) ||
-         !preg_match("/[0-9]/", $field))
-   return "Passwords require 1 each of a-z, A-Z and 0-9<br>"; return "";
- }
+function validate_adminFile($field) {
+return ($field == "") ? "No file was entered<br>": "";
+}
 
  //===================================================================================
 
@@ -88,76 +78,4 @@ else if (!preg_match("/[a-z]/", $field) ||
     return $conn;
   }
 //===================================================================================================
- echo <<<_END
- <head>
-   <style type="text/css">
-   body{
-     background-color: #33C4FF
-   }
-   .login{
-     margin: auto;
-     display: block;
-     text-align: center;
-   }
-   #uname,#pass{
-     font-size: 20px;
-   }
-   .header{
-     text-align: center;
-     font-size: 20px;
-   }
-   .error{
-     margin: auto;
-     display: block;
-     text-align: center;
-   }
-   </style>
-   <script>
-   function validate(form) {
-   fail += validateUsername(form.username.value)
-   fail += validatePassword(form.password.value)
-   if (fail == "") return true
-   else {
-     alert(fail); return false
-      }
-   }
-
-   function validateUsername(field) {
-   if (field == "") return "No Username was entered.\n"
-   else if (field.length < 5) return "Usernames must be at least 5 characters.\n"
-    else if (/[^a-zA-Z0-9_-]/.test(field))
-      return "Only a-z, A-Z, 0-9, - and _ allowed in Usernames.\n"
-      return ""
-   )
-
-   function validatePassword(field) {
-     if (field .. "") return "No Password was entered"
-     else if (field.length < 6) return "Passwords must be at least 6 characters"
-     else if (!/[a-z]/.test(field) || ! /[A-Z]/.test(field) || !/[0-9]/.test(field))
-       return "Passwords require one each of given char"
-       return ""
-   }
-
-   </script>
- </head>
- <title> AntiVirus 2017 </title>
-   <body>
-   <div class="header">
-     <h1> Admin Login </h1>
-   </div>
-   <div class="error">
-   Sorry, the following errors were found<br>
-   in your form: <p><font color=black size= 4><i>$fail</i></font></p>
-   </div>
-
-     <div class="login">
-     <form method="post" action="adminlogin.php" onSubmit="return validate(this)">
-       Username: <input type="text" name="username" id="uname" /> <br> <br>
-       PassWord: <input type="password" name="password" id="pass"/> <br> <br>
-               <button type="submit" name="login"> Login </button>
-      </form>
-     </div>
-       <br><br><br><br><hr>
-   </body>
-_END;
  ?>
