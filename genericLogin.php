@@ -1,5 +1,5 @@
 <?php
-require_once 'login.php';
+require_once 'login_details.php';
 
 $username = $password = "";
 if(isset($_POST['username'])){
