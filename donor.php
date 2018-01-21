@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Davis Pantry</title>
+    <?php require_once 'adminlogin.php'; ?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="/assets/css/style.css">
   </head>
@@ -18,7 +19,8 @@
                 </div>
             </div>
             <div class="row">
-                <form class="mx-auto" method="POST">
+              <?php insertPost(); ?>
+                <form class="mx-auto" method="post" action="" enctype="multipart/form-data">
                   <div class="form-group">
                     <label for="foodDesc">Food Description</label>
                     <input type="email" class="form-control" name="foodDesc">
@@ -27,7 +29,7 @@
                     <label for="picture">Picture</label>
                     <input type="file" class="form-control-file" name="foodPic">
                   </div>
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" name="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>

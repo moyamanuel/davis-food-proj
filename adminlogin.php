@@ -1,7 +1,8 @@
 <?php
-require_once 'login.php';
 
+$target_file = "";
 $username = $password = "";
+
 if(isset($_POST['username'])){
  $username = fix_string($_POST["username"]);
 }
@@ -39,11 +40,11 @@ function validate_credentials($connection, $username, $password)
             //intializing the session to session_start
             session_start();
             $_SESSION['username'] = $row[0];
-           // Redirect the admin to page where they want to be 
-           
-           
-           
-           
+           // Redirect the admin to page where they want to be
+
+
+
+
         }
         else{
           echo '<p> Credentials not valid </p>';
@@ -83,4 +84,35 @@ return ($field == "") ? "Please Enter your Password.\n" : "";
     return $conn;
   }
 //===================================================================================================
+  //Upload data query
+  function insertImage() {
+  // Check if image file is a actual image or fake image
+  if(isset($_POST["submit"])) {
+    $target_dir = "img/";
+
+    $target_file = $target_dir . basename($_FILES["foodPic"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+      $check = getimagesize($_FILES["foodPic"]["tmp_name"]);
+      if($check !== false) {
+          $uploadOk = 1;
+      } else {
+          echo "File is not an image.";
+          $uploadOk = 0;
+      }
+
+      if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+        // if everything is ok, try to upload file
+      } else {
+        if (move_uploaded_file($_FILES["foodPic"]["tmp_name"], $target_file)) {
+          //execute code
+          echo $target_file;
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+          }
+        }
+  }
+}
+
  ?>
