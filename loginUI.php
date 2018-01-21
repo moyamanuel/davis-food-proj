@@ -10,7 +10,7 @@
   <title>LoopLAB</title>
 </head>
 <body>
-  <?php include("assets/includes/header.html");?>
+  
   <!-- HOME SECTION -->
   <section id="home-section">
     <div class="dark-overlay">
@@ -27,8 +27,13 @@
                     <label>Password:<sup class="text-danger">*</sup></label>
                     <input type="password" name="password" class="form-control">
                 </div>
-                <label>  <input type="checkbox" class="text-white" name="usertype">For Admin Login </label> <br>
-                  <button type="submit" name="signin" class="btn btn-outline-primary">Submit</button>
+                <label>
+                  <select name="select_box">
+                     <option value="0">Login As User</option>
+                     <option value="1">Login As Donor</option>
+                     <option value="2">Login As Admin</option>
+                 </select>
+              <button type="submit" name="signin" class="btn btn-outline-primary">Submit</button>
                 </form><br>
 
             </div>
@@ -40,9 +45,6 @@
                   <form>
                     <div class="form-group">
                       <input type="text" name="username" class="form-control form-control-lg" placeholder="Username">
-                    </div>
-                    <div class="form-group">
-                      <input type="email" name="email" class="form-control form-control-lg" placeholder="Email">
                     </div>
                     <div class="form-group">
                       <input type="password" name="password" class="form-control form-control-lg" placeholder="Password">
