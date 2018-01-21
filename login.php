@@ -8,20 +8,7 @@
   </head>
 
   <body>
-  <!-- Header -->
-    <header id="main-header" class="py-2 bg-primary text-white mb-3">
-        <div class="container">
-
-          <div class="row">
-            <div class="col-sm-2">
-              <a href="login.php" class="h5"> Home</a>
-            </div>
-            <div class="col-sm-10 input-group">
-                <input type="search" class="form-control" placeholder="Search For Location to find nearest Food Item" />
-            </div>
-          </div>
-        </div>
-    </header>
+    <?php include("includes/header.html");?>
 
 <!-- Login Section -->
     <section id="home-section" class="mb-5">
@@ -67,20 +54,7 @@
 
   </section>
 
-<footer id="main-footer" class="bg-inverse">
-<div class="container">
-  <div class="row">
-    <div class="col text-center">
-      <div class="py-4">
-        <h1 class="h3">Davis Pantry</h1>
-        <p>Copyright &copy; 2018</p>
-      </div>
-    </div>
-  </div>
-</div>
-</footer>
-
-
+  <?php include("includes/footer.html");?>
 
   </body>
 </html>
