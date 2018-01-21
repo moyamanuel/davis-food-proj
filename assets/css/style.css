@@ -1,13 +1,12 @@
-body {
-    margin-top: 100px;
-}
-
 #home-section {
   background: url("../img/home.jpg") no-repeat center top fixed;
   background-size: cover;
   background-attachment: fixed;
   min-height: 700px; }
 
+#login-section {
+  margin-top: 55px;
+}
 
 .footer {
     position: absolute;
