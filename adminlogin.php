@@ -39,7 +39,11 @@ function validate_credentials($connection, $username, $password)
             //intializing the session to session_start
             session_start();
             $_SESSION['username'] = $row[0];
-            header("location: admin_malware.php");
+           // Redirect the admin to page where they want to be 
+           
+           
+           
+           
         }
         else{
           echo '<p> Credentials not valid </p>';
