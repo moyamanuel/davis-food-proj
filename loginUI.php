@@ -10,14 +10,26 @@
   <title>LoopLAB</title>
 </head>
 <body>
-
+  <?php include("assets/includes/header.html");?>
   <!-- HOME SECTION -->
   <section id="home-section">
     <div class="dark-overlay">
       <div class="home-inner">
         <div class="container">
           <div class="row">
-            <div class="col-md-8 d-none d-md-block">
+            <div class="col-sm-8" text-white>
+              <form method="post" action=""  onsubmit="return validate(this)">
+                <div class="form-group text-white">
+                    <label>Username:<sup class="text-danger">*</sup></label>
+                    <input type="text" name="username"class="form-control" value="">
+                </div>
+                <div class="form-group text-white">
+                    <label>Password:<sup class="text-danger">*</sup></label>
+                    <input type="password" name="password" class="form-control">
+                </div>
+                <label>  <input type="checkbox" class="text-white" name="usertype">For Admin Login </label> <br>
+                  <button type="submit" name="signin" class="btn btn-outline-primary">Submit</button>
+                </form><br>
 
             </div>
             <div class="col-md-4">
@@ -28,6 +40,9 @@
                   <form>
                     <div class="form-group">
                       <input type="text" name="username" class="form-control form-control-lg" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                      <input type="email" name="email" class="form-control form-control-lg" placeholder="Email">
                     </div>
                     <div class="form-group">
                       <input type="password" name="password" class="form-control form-control-lg" placeholder="Password">
@@ -46,9 +61,8 @@
     </div>
   </section>
 
-
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/tether.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/tether.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
