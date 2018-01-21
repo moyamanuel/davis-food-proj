@@ -30,8 +30,8 @@
                 <label>
                   <select name="select_box">
                      <option value="0">Login As User</option>
-                     <option value="1">Login As Donor</option>
-                     <option value="2">Login As Admin</option>
+                     <option value="1">Login As Admin</option>
+                     <option value="2">Login As Donor</option>
                  </select>
               <button type="submit" name="signin" class="btn btn-outline-primary">Submit</button>
                 </form><br>
