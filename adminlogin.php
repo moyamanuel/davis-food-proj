@@ -112,7 +112,7 @@ return ($field == "") ? "Please Enter your Password.\n" : "";
             echo "Sorry, there was an error uploading your file.";
           }
         }
-  }
-}
+      }
+    }
 
  ?>
