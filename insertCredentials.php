@@ -1,5 +1,7 @@
 <?php
 
+require_once 'login_details.php';
+
 // Initialize the session
 session_start();
 
