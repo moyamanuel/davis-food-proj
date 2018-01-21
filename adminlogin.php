@@ -54,13 +54,14 @@ function validate_credentials($connection, $username, $password)
 //===============================================================================
 /* Function to validate if username entered matches the condition or not
 */
-function validate_malwarename($field) {
-return ($field == "") ? "No Forename was entered<br>": "";
-}
+function validate_username($field) {
+return ($field == "") ? "No Username was entered.\n" : "";
+};
 
-function validate_adminFile($field) {
-return ($field == "") ? "No file was entered<br>": "";
-}
+// Function for PHP validation of the submitted Password field if it's entered or not.
+function validate_password($field) {
+return ($field == "") ? "Please Enter your Password.\n" : "";
+};
 
  //===================================================================================
 
