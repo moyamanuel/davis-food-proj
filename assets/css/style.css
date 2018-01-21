@@ -2,7 +2,8 @@
   background: url("../img/home.jpg") no-repeat center top fixed;
   background-size: cover;
   background-attachment: fixed;
-  min-height: 700px; }
+  min-height: 100%;
+}
 
 #login-section {
   margin-top: 55px;
